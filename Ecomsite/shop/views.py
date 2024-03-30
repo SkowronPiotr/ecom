@@ -29,3 +29,7 @@ def detail(request, id):
     return render(request, "shop/detail.html", {
         "product_object": product_object,
     })
+
+
+def checkout(request):
+    return render(request, "shop/checkout.html")
