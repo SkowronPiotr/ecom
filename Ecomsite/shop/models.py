@@ -13,3 +13,13 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class Order(models.Model):
+    items = models.CharField(max_length=1000)
+    name = models.CharField(max_length=200)
+    email = models.EmailField(verbose_name="Email")
+    address = models.CharField(max_length=1000)
+    city = models.CharField(max_length=200)
+    state = models.CharField(max_length=200)
+    zipcode = models.CharField(max_length=200)
