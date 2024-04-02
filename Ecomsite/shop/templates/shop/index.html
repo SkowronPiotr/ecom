@@ -140,8 +140,8 @@
     });
     // I don't know why it doesn't work I am leaving console logs bellow because for me it should work but it does not
     // output from consolelog is satysfying but popover does not showup with this ${productName} 
-    
     {% comment %} function DisplayCart(cart){
+
         var cartString ="";
         cartString += "<h5>This is your cart</h5>";
         var cartIndex = 1;
@@ -155,6 +155,22 @@
         document.getElementById("cart").setAttribute('data-content',cartString);
         $('[data-toggle="popover"]').popover();
     } {% endcomment %}
+    {% comment %} function DisplayCart(cart){
+
+        var cartString = "";
+        var cartIndex = 1;
+        let cartObject = JSON.parse(localStorage.getItem('cart'))
+
+        for (item in cartObject) {
+            console.log(cartObject[item][0])
+            console.log(cartObject[item][1])
+            cartString += cartObject[item][1] + " Qty: " + cartObject[item][0] + "</br>";
+        }
+        cartString += "<a href='/checkout'><button class='btn btn-warning id='chheckout'>Checkout</button></a>";
+        document.getElementById("cart").setAttribute('data-content', cartString)
+        $('[data-toggle="popover"]').popover()
+    }
+    var xyz = DisplayCart(cart); {% endcomment %}
 
     {% comment %} function DisplayCart(cart){
         var cartString = "";
