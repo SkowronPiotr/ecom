@@ -138,24 +138,7 @@
         document.getElementById("cart").innerHTML = "Cart("+ Object.keys(cart).length +")";
        
     });
-    // I don't know why it doesn't work I am leaving console logs bellow because for me it should work but it does not
-    // output from consolelog is satysfying but popover does not showup with this ${productName} 
-    {% comment %} function DisplayCart(cart){
-
-        var cartString ="";
-        cartString += "<h5>This is your cart</h5>";
-        var cartIndex = 1;
-        for(var x in cart){
-            cartString += cartIndex;
-            cartString += document.getElementById("nm"+x).innerHTML + "Qty:" + cart[x][0] + "</br>";
-            cartIndex+=1;
-        }
- 
-        cartString += "<a href='/checkout'><button class='btn btn-warning' id='checkout'>Checkout</button></a>";
-        document.getElementById("cart").setAttribute('data-content',cartString);
-        $('[data-toggle="popover"]').popover();
-    } {% endcomment %}
-    {% comment %} function DisplayCart(cart){
+    function DisplayCart(cart){
 
         var cartString = "";
         var cartIndex = 1;
@@ -168,44 +151,17 @@
         }
         cartString += "<a href='/checkout'><button class='btn btn-warning id='chheckout'>Checkout</button></a>";
         document.getElementById("cart").setAttribute('data-content', cartString)
+        return cartString;
         $('[data-toggle="popover"]').popover()
     }
-    var xyz = DisplayCart(cart); {% endcomment %}
-
-    {% comment %} function DisplayCart(cart){
-        var cartString = "";
-        var cartIndex = 1;
-
-        for(var x in cart){
-            var productName = document.getElementById("nm"+cartIndex).getElementsByClassName("card-title")[0].innerText;
-            cartString += `${cartIndex}. ${productName} Qty: ${cart[x]} `;
-            console.log(cartString)
-            //cartString += `${cartIndex}.  Qty: ${cart[x]}`;
-            cartIndex ++;
-        }
-    
-        return cartString;
-    }
     var xyz = DisplayCart(cart);
-    // prints output 1. Watch Qty: 6 2. Laptop Qty: 6 3. Bike Qty: 2 4. Laptop Bag Qty: 1 
-    // still popover is not working
-    {% comment %} var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
-        //var cartContent = DisplayCart(cart);
 
-        return new bootstrap.Popover(popoverTriggerEl, {
-            title: "This is your cart",
-            //content: cartContent,
-            content: "<a href='/checkout'><button class='btn btn-warning' id='/checkout>Checkout</button</a>",
-            sanitize: false, 
-        });
-    }); {% endcomment %}
     $(function () {
         $('#cart').popover({
             html      : true,
             title     : "This is your cart",
-            //content   : xyz,
-            content   : "<a href='/checkout'><button class='btn btn-warning' id='checkout'>Checkout</button></a>",
+            content   : xyz,
+            //content   : "<a href='/checkout'><button class='btn btn-warning' id='checkout'>Checkout</button></a>",
             sanitize  : false, 
         })
       })
