@@ -6,3 +6,13 @@
 .card-title {
     font-weight: 900;
 }
+
+.size {
+    height: 432px;
+    width: 306px;
+}
+
+.card-img-top{
+    height: 304px;
+    width: 304px;
+}
