@@ -23,9 +23,8 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ('price', 'category', 'discount_pricee')
 
 
-# admin.site.register(Product, ProductAdmin)
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'address',
                     'city', 'state', 'zipcode', 'total')
-    search_fields = ('email',)
+    search_fields = ('name', 'email')
