@@ -2,7 +2,7 @@
 
 ## Technologies and tools used in project
 ### Python/Django, HTML, CSS/Boostrap, JavaScript
-- Boostrap forms and styling
+- Bootstrap forms and styling
 - JavaScript popover and dynamic checkout page
 
 ## Features
