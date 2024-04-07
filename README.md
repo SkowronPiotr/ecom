@@ -1,4 +1,4 @@
-# Simple online shopping site
+# Online shopping site
 
 ## Technologies and tools used in project
 ### Python/Django, HTML, CSS/Boostrap, JavaScript
