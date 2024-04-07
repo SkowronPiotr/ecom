@@ -10,6 +10,7 @@
 - Posting orders
 - Searching
 - Dynamic cart
+  ![checkout](https://github.com/SkowronPiotr/ecom/assets/152208900/a5eafd89-026c-4979-8bc6-78b90f1a9d1c)
 
 ## General info
 
